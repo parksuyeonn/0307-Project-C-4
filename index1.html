@@ -23,14 +23,11 @@
   
     const _URL = `https://pokeapi.co/api/v2/pokemon/${value}`;
     
-    xhr.open('GET', _URL);  //open 힘수(초기화)를 통해 서버에 전달값 설정. (get 메서드로 URL에 전달 할거다.)
-    xhr.send(); // 서버에 전달 요청
+    xhr.open('GET', _URL);  
+    xhr.send(); 
     xhr.addEventListener('load', function() {
     
       fetch(_URL).then((response)=> response.json()).then((data)=>{img.src=data.sprites.front_default})
-
-      
-
     })
 
 
@@ -49,7 +46,7 @@
 
     })
   })
-  
+   //root.children[0].addEventListener 안에 들어 있는 식이랑  본문에 들어 있는 식이랑 겹치는 이유는, 화면을 load 했을 때 보여지는 포켓몬이 있어야 하기 떄문( 본문에 들어 있는 식이 없으면, 화면이 load 될 때는 포켓몬이 나오지 않고, 버튼을 눌러야 나옴.)
   </script>
 </body>
 </html>
